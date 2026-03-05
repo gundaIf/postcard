@@ -2,7 +2,7 @@
 
 Transform your photos into beautiful, customizable postcards — right in your browser.
 
-**[Live Demo →](https://gundalf.github.io/postcard/)**
+**[Live Demo →](https://gundaif.github.io/postcard/)**
 
 ## ✨ Features
 
