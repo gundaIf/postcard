@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcard Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&family=Caveat&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Postcard Maker</h1>
+            <p>Transform your photos into beautiful postcards</p>
+        </header>
+
+        <main>
+            <section class="canvas-area">
+                <div id="postcard" class="postcard">
+                    <div class="upload-prompt" id="uploadPrompt">
+                        <span class="icon">📷</span>
+                        <span>Drop image or click to upload</span>
+                    </div>
+                    <img id="previewImage" class="preview-image" hidden>
+                    <div id="textOverlay" class="text-overlay"></div>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </section>
+
+            <aside class="controls">
+                <div class="control-group">
+                    <label>Message</label>
+                    <textarea id="textInput" placeholder="Your message here..."></textarea>
+                </div>
+
+                <div class="control-group">
+                    <label>Font</label>
+                    <select id="fontSelect">
+                        <option value="'Inter', sans-serif">Inter</option>
+                        <option value="'Playfair Display', serif">Playfair</option>
+                        <option value="'Caveat', cursive">Caveat</option>
+                        <option value="'Roboto Mono', monospace">Mono</option>
+                    </select>
+                </div>
+
+                <div class="control-row">
+                    <div class="control-group">
+                        <label>Text Color</label>
+                        <input type="color" id="textColor" value="#ffffff">
+                    </div>
+                    <div class="control-group">
+                        <label>Font Size</label>
+                        <input type="range" id="fontSize" min="12" max="72" value="24">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Text Position</label>
+                    <div class="position-grid">
+                        <button data-pos="top-left">↖</button>
+                        <button data-pos="top-center">↑</button>
+                        <button data-pos="top-right">↗</button>
+                        <button data-pos="center-left">←</button>
+                        <button data-pos="center" class="active">●</button>
+                        <button data-pos="center-right">→</button>
+                        <button data-pos="bottom-left">↙</button>
+                        <button data-pos="bottom-center">↓</button>
+                        <button data-pos="bottom-right">↘</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Border</label>
+                    <div class="border-options">
+                        <button data-border="none" class="active">None</button>
+                        <button data-border="simple">Simple</button>
+                        <button data-border="double">Double</button>
+                        <button data-border="rounded">Rounded</button>
+                        <button data-border="vintage">Vintage</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Filter</label>
+                    <div class="filter-options">
+                        <button data-filter="none" class="active">None</button>
+                        <button data-filter="grayscale">B&W</button>
+                        <button data-filter="sepia">Sepia</button>
+                        <button data-filter="warm">Warm</button>
+                        <button data-filter="cool">Cool</button>
+                        <button data-filter="vintage">Vintage</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Orientation</label>
+                    <div class="orientation-options">
+                        <button data-orientation="landscape" class="active">Landscape</button>
+                        <button data-orientation="portrait">Portrait</button>
+                    </div>
+                </div>
+
+                <div class="control-group export-group">
+                    <label>Download</label>
+                    <div class="export-buttons">
+                        <button id="downloadPng" class="btn-primary">PNG</button>
+                        <button id="downloadJpg" class="btn-secondary">JPG</button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
